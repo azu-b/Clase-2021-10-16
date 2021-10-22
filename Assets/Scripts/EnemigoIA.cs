@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemigoIA : MonoBehaviour
 {
-    // Start is called before the first frame update
+    NavMeshAgent nav;
+    public Transform obj;
+
     void Start()
     {
-        
+        nav = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // nav.remainingDistance // <--- Distancia para llegar al objetivo
+        nav.SetDestination(obj.position); // Le actualizo en dónde está su objetivo
     }
 }
