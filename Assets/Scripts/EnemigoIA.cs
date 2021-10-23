@@ -11,6 +11,9 @@ public class EnemigoIA : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+
+        // int numLaberinto = NavMesh.GetAreaFromName("Laberinto"); // Actual: 3
+        // NavMesh.SetAreaCost(numLaberinto, 1f);
     }
 
     void Update()
