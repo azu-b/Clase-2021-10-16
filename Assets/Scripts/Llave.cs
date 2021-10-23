@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Llave : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject[] obstaculos;
+
     void Start()
     {
-        
+        obstaculos = GameObject.FindGameObjectsWithTag("ObstaculoFlotante");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Choqué con jugador");
+            gameObject.SetActive(false);
+
+            foreach (GameObject obstaculo in obstaculos)
+            {
+                Transform obstaculoTransform = obstaculo.GetComponent<Transform>();
+                obstaculoTransform.Translate(Vector3.up * 4f);
+            }
+        }
     }
 }
