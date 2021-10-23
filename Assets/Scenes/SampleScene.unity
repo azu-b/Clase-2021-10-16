@@ -1068,7 +1068,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
@@ -1851,10 +1851,10 @@ GameObject:
   - component: {fileID: 956863701}
   - component: {fileID: 956863700}
   - component: {fileID: 956863699}
-  - component: {fileID: 956863698}
   - component: {fileID: 956863697}
   - component: {fileID: 956863696}
   - component: {fileID: 956863702}
+  - component: {fileID: 956863698}
   m_Layer: 0
   m_Name: EnemigoPatrulla
   m_TagString: Untagged
@@ -1908,9 +1908,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956863695}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 8
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1992,6 +1992,7 @@ MonoBehaviour:
   puntoA: {fileID: 1195124367}
   puntoB: {fileID: 272083496}
   puntoC: {fileID: 268805097}
+  jugador: {fileID: 963849211}
 --- !u!4 &963849211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}

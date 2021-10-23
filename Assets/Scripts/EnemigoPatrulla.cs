@@ -9,6 +9,7 @@ public class EnemigoPatrulla : MonoBehaviour
     public Transform puntoA;
     public Transform puntoB;
     public Transform puntoC;
+    public Transform jugador;
 
     bool estaPatrullando = true;
     enum Destino
@@ -19,7 +20,8 @@ public class EnemigoPatrulla : MonoBehaviour
         Jugador
     }
 
-    Destino actual = Destino.PuntoA;
+    Destino destinoActual = Destino.PuntoA;
+    Destino destinoOriginal;
 
     void Start()
     {
@@ -31,26 +33,65 @@ public class EnemigoPatrulla : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (estaPatrullando)
+        if (nav.remainingDistance <= 2.2f)
         {
-            if (nav.remainingDistance <= 2.2f)
+            if (estaPatrullando)
             {
-                if (actual == Destino.PuntoA)
-                {
-                    nav.SetDestination(puntoB.position);
-                    actual = Destino.PuntoB;
-                }
-                else if (actual == Destino.PuntoB)
-                {
-                    nav.SetDestination(puntoC.position);
-                    actual = Destino.PuntoC;
-                }
-                else if (actual == Destino.PuntoC)
-                {
-                    nav.SetDestination(puntoA.position);
-                    actual = Destino.PuntoA;
-                }
+                PatrullaNormal();
+            } else
+            {
+                RestablecerDestinoOriginal();
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && estaPatrullando)
+        {
+            destinoOriginal = destinoActual;
+            destinoActual = Destino.Jugador;
+            nav.SetDestination(jugador.position);
+            estaPatrullando = false;
+        }
+    }
+
+    void RestablecerDestinoOriginal()
+    {
+        destinoActual = destinoOriginal;
+
+        if (destinoActual == Destino.PuntoA)
+        {
+            nav.SetDestination(puntoA.position);
+        }
+        else if (destinoActual == Destino.PuntoB)
+        {
+            nav.SetDestination(puntoB.position);
+        }
+        else if (destinoActual == Destino.PuntoC)
+        {
+            nav.SetDestination(puntoC.position);
+        }
+
+        estaPatrullando = true;
+    }
+
+    void PatrullaNormal()
+    {
+        if (destinoActual == Destino.PuntoA)
+        {
+            nav.SetDestination(puntoB.position);
+            destinoActual = Destino.PuntoB;
+        }
+        else if (destinoActual == Destino.PuntoB)
+        {
+            nav.SetDestination(puntoC.position);
+            destinoActual = Destino.PuntoC;
+        }
+        else if (destinoActual == Destino.PuntoC)
+        {
+            nav.SetDestination(puntoA.position);
+            destinoActual = Destino.PuntoA;
         }
     }
 }
