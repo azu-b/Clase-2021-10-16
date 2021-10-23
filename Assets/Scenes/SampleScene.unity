@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268805097}
   m_Layer: 0
-  m_Name: PuntoAEnemigoPatrulla
+  m_Name: PuntoCEnemigoPatrulla
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -480,11 +480,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268805096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.94, y: 0.28, z: -21.88}
+  m_LocalPosition: {x: 23.6, y: 0.28, z: -16.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &272083495
 GameObject:
@@ -496,7 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272083496}
   m_Layer: 0
-  m_Name: PuntoCEnemigoPatrulla
+  m_Name: PuntoBEnemigoPatrulla
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -514,7 +514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497130527
 GameObject:
@@ -1854,6 +1854,7 @@ GameObject:
   - component: {fileID: 956863698}
   - component: {fileID: 956863697}
   - component: {fileID: 956863696}
+  - component: {fileID: 956863702}
   m_Layer: 0
   m_Name: EnemigoPatrulla
   m_TagString: Untagged
@@ -1976,6 +1977,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956863702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956863695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710bbd21eff6d314991bacfff677b6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntoA: {fileID: 1195124367}
+  puntoB: {fileID: 272083496}
+  puntoC: {fileID: 268805097}
 --- !u!4 &963849211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
@@ -2336,7 +2352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1195124367}
   m_Layer: 0
-  m_Name: PuntoBEnemigoPatrulla
+  m_Name: PuntoAEnemigoPatrulla
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2350,11 +2366,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195124366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.62, y: 0.28, z: -15.4}
+  m_LocalPosition: {x: -23.6, y: 0.28, z: -21.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213651807
 GameObject:
